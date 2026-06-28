@@ -14,7 +14,7 @@ import {
   NEURAL_IMAGE_URL,
 } from "@/lib/constants";
 import SectionHeading from "@/components/ui/SectionHeading";
-import SystemLog from "./SystemLog";
+import AgenticCortex from "./AgenticCortex";
 
 const ICONS = {
   Bot,
@@ -90,7 +90,7 @@ export default function CoreExpertise() {
               COGNITIVE CORE
             </div>
             <h4 className="font-hanken font-bold text-lg text-white mb-2">
-              Real-time AGENTIC Processing
+              Real-time Agentic Processing
             </h4>
             <p className="font-sans text-slate-300 text-xs sm:text-sm leading-relaxed mb-4">
               Our core engine routes decisions instantly, querying secure deep
@@ -110,7 +110,7 @@ export default function CoreExpertise() {
           </div>
         </div>
 
-        <SystemLog />
+        <AgenticCortex />
       </div>
     </section>
   );

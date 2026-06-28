@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import { Check, CheckCircle2 } from "lucide-react";
 import CountryCodeSelect from "@/components/ui/CountryCodeSelect";
-import { useSystemLog } from "@/context/SystemLogContext";
 import useCalendlyRefresh from "@/hooks/useCalendlyRefresh";
 import { buildCalendlyUrl } from "@/lib/calendly";
 import {
@@ -29,7 +28,6 @@ export default function ContactPage() {
   const [status, setStatus] = useState("idle");
   const [error, setError] = useState(null);
   const [submission, setSubmission] = useState(null);
-  const { logTransmission } = useSystemLog();
   const { refreshKey, triggerManualRefresh } = useCalendlyRefresh(CALENDLY_URL);
   const calendlySrc = buildCalendlyUrl(CALENDLY_URL);
 
@@ -126,7 +124,6 @@ export default function ContactPage() {
         solution: solutions,
         timestamp: new Date().toLocaleTimeString(),
       });
-      logTransmission(name.trim(), company.trim());
     } catch (submitError) {
       setStatus("idle");
       setError(

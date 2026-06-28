@@ -57,10 +57,19 @@ export default function Header() {
           <Link
             id="header-cta-button"
             href="/contact"
-            className="px-5 py-2.5 rounded-full bg-white/5 hover:bg-white/10 text-white font-semibold text-sm border border-white/10 transition-all active:scale-95 flex items-center space-x-2"
+            className={`relative px-5 py-2.5 rounded-full font-semibold text-sm transition-all duration-300 active:scale-95 flex items-center space-x-2 ${
+              activeNavId === "contact"
+                ? "bg-gradient-to-r from-[#adc6ff] to-[#14d1ff] text-[#002e6a] shadow-lg shadow-cyan-500/30"
+                : "bg-gradient-to-r from-[#adc6ff]/15 to-[#14d1ff]/10 text-white border border-[#adc6ff]/40 shadow-md shadow-[#adc6ff]/20 hover:from-[#adc6ff]/25 hover:to-[#14d1ff]/20 hover:border-[#adc6ff]/60 hover:shadow-lg hover:shadow-cyan-500/25"
+            }`}
           >
             <span>Book Discovery</span>
-            <ArrowUpRight className="w-4 h-4 text-[#adc6ff]" aria-hidden="true" />
+            <ArrowUpRight
+              className={`w-4 h-4 ${
+                activeNavId === "contact" ? "text-[#002e6a]" : "text-[#14d1ff]"
+              }`}
+              aria-hidden="true"
+            />
           </Link>
         </div>
 

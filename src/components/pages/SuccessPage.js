@@ -113,7 +113,7 @@ export default function SuccessPage() {
                   CONVERSION METRIC LIFT
                 </span>
                 <span className="text-4xl font-hanken font-black text-emerald-400">
-                  60%
+                  32%
                 </span>
                 <span className="text-[10px] font-mono text-slate-500 block mt-1">
                   Calculated post-launch

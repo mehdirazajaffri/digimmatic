@@ -1,24 +1,31 @@
+import { sendDiscoveryInquiry } from "@/lib/email";
+
+export const runtime = "nodejs";
+
 export async function POST(request) {
   try {
     const body = await request.json();
-    const { name, company, email, phone, solutions } = body;
+    const name = body.name?.trim();
+    const company = body.company?.trim();
+    const email = body.email?.trim();
+    const phone = body.phone?.trim();
+    const solutions = body.solutions?.trim();
 
-    if (!name?.trim() || !company?.trim() || !email?.trim() || !phone?.trim()) {
+    if (!name || !company || !email || !phone) {
       return Response.json(
         { error: "All required fields must be provided." },
         { status: 400 },
       );
     }
 
-    if (!solutions?.trim()) {
+    if (!solutions) {
       return Response.json(
         { error: "At least one AI Solution must be selected." },
         { status: 400 },
       );
     }
 
-    // Log inquiry server-side; wire to SMTP provider in production.
-    console.log("Discovery inquiry received:", {
+    await sendDiscoveryInquiry({
       name,
       company,
       email,
@@ -27,7 +34,13 @@ export async function POST(request) {
     });
 
     return Response.json({ success: true });
-  } catch {
+  } catch (error) {
+    console.error("Discovery email failed:", {
+      message: error.message,
+      code: error.code,
+      response: error.response,
+    });
+
     return Response.json(
       { error: "Failed secure delivery to SMTP route." },
       { status: 500 },

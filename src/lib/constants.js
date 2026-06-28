@@ -58,10 +58,6 @@ export const EXPERTISE_CARDS = [
   },
 ];
 
-export const INITIAL_LOG_ENTRIES = [
-  "INITIALIZATION: Agent cluster activated on core-3000",
-  "STATUS: AI Agents online & ready for query parsing",
-];
 
 export const NEURAL_IMAGE_URL =
   "https://lh3.googleusercontent.com/aida-public/AB6AXuBCigb65Hb3IeI1MN6qOjC9UTLMOg2fHVO508m-rCK5iS1mugFQ30HeSyROcj8g3Oh2hcTzmtZDC4Pygf1XMdR1jCgXAa1wIzHo1yxGYf5YkRrVglRSJLd8X33Wc-h6gLd1UiTJptqedkjCDqklnaQyxQzhj8W_VWGOdMAoLVbh8IR_L94eXmboY04qR16FOw2Pko9YvOZNjdUgyYvJs1IFyqcHhk5kFX3CwO-urPXK0T9LWfIxnJ6yswwjRZbfb2TvqOlbRoPq15DS";
